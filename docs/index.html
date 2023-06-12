@@ -3,7 +3,7 @@
   <head>
     <title>JavaScript Input</title>
     <link rel="stylesheet" type="text/css" href="src/style.css" />
-    <script src="src/script.js"></script>
+    <!---<script src="src/script.js"></script>-->
   </head>
   <body>
     <div class="row">
@@ -18,7 +18,7 @@
           <textarea id='db_id' placeholder="Enter your db_id ..."></textarea>
         </p>
         <p>
-        <button onclick="request();"> 
+        <button><!---</button> onclick="request();">-->
           send 
         </button>
         </p>
@@ -28,6 +28,26 @@
         Query:
         <p>
           <textarea id='query' placeholder="SQL query ..."></textarea>
+          <script>
+              fetch("https://test2sql-haqa5jgl5a-ue.a.run.app/", {
+                  mode: 'no-cors',
+                  method: 'POST',
+                  headers: {
+                      'Accept': 'application/json',
+                      'Content-Type': 'application/json',
+                      'contentType': 'application/json'
+                  },
+                  body: JSON.stringify({
+                      "db_id": "customer_complaints",
+                      "question": "Give the state that has the most customers.",
+                      "create_table_sql": ""
+                  })
+              })
+              .then(res=> {
+                return res.json();
+              })
+              .catch(error => console.log(error));
+          </script>
         </p>
       </div>
       <div class="result"> 

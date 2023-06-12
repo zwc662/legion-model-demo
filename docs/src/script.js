@@ -12,11 +12,11 @@ function request(){
     let data = document.getElementById("data")
 
     getResult(db_id, question, schema)
-        .then((res)=>{
-            return res.json();
-        })
-        .then((res)=>{
+        .then(res => {
             printResult(res);
+        })
+        .catch(error => {
+            console.log(error);
         });
     
   }
@@ -35,46 +35,27 @@ function request(){
 
   async function getResult(db_id, question, schema){
     const res= await fetch("https://test2sql-haqa5jgl5a-ue.a.run.app/", {
-        mode: 'cors',
+        mode: 'no-cors',
         method: 'POST',
         headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': 'http://127.0.0.1:5500',
+            'Content-Type': 'application/json' 
         },
         body: JSON.stringify({
             "db_id": db_id,
             "question": question,
             "create_table_sql": schema
         })
-    })
-    const res_json = await res.json()
-    return res_json
+    });
+    const res_json = await res.json(); 
+    return res_json;
 }
 
 let db_id="customer_complaints"
 let schema=""
 let question="Give the state that has the most customers."
-/*
-const everything = async () =>{
-    const res= await fetch("https://test2sql-haqa5jgl5a-ue.a.run.app", {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            "db_id": db_id,
-            "question": question,
-            "create_table_sql": schema
-        })
-    })
-    const res_json = await res.json()
-    return res_json
-}
-*/
-
+ 
 getResult(db_id, question, schema)
         .then((res)=>console.log(res));
-     
+ 
        
