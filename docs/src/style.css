@@ -1,0 +1,85 @@
+p {
+    font-size: 16pt;
+    font-family: monospace;
+    width: 500px;
+  }
+
+textarea {
+  outline: grey;
+  border-radius: 8px;
+  font-size: 16pt;
+  vertical-align: top;
+  text-align: left;
+  width: 500px;
+}
+
+#question {
+  height: 60px;
+}
+#schema {
+  height: 500px;
+}
+#db_id {
+  height: 30px;
+}
+
+span {
+  outline: grey;
+  border-radius: 8px;
+  font-size: 16pt;
+  vertical-align: top;
+  text-align: left;
+  width: 500px;
+
+}
+#query {
+  outline: grey;
+  height: 60px;
+}
+#data {
+  outline: grey;
+  height: 200px;
+}
+
+.column {
+  float: left;
+  width: 50px;
+  /*padding: 50px;
+  height: 300px; Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.result{
+  background-color:grey;
+  border-radius: 8px;
+  font-size: 16pt;
+  font-family: monospace;
+  vertical-align: top;
+  text-align: left;
+  width: 550px;
+  margin-left:500px;
+  margin-top:100px;
+}
+
+button {
+  width: 500px;
+  height: 36px;
+  text-align: center;
+  vertical-align: top;
+  padding: 0;
+  border-radius: 8px;
+  font-size: 16pt;
+}
+
+#create_table_sql {
+    color: black;	
+}
+
+#response {
+  background-color: black;
+}

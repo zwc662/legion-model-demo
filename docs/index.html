@@ -2,14 +2,41 @@
 <html>
   <head>
     <title>JavaScript Input</title>
-    <script src="src/script.js">
-    </script>
+    <link rel="stylesheet" type="text/css" href="src/style.css" />
+    <script src="src/script.js"></script>
   </head>
   <body>
-    <input id="name-input" />
-    <button onclick="sayHello();">
-      Click me!
-    </button>
-    <p id="output"></p>
+    <div class="row">
+      <div class="column">
+        <p>
+        <textarea id='question' placeholder="Enter your question ..."></textarea>
+        </p>
+        <p>
+          <textarea id='schema' placeholder="Enter your schema ..."></textarea>
+        </p>
+        <p>
+          <textarea id='db_id' placeholder="Enter your db_id ..."></textarea>
+        </p>
+        <p>
+        <button onclick="request();"> 
+          send 
+        </button>
+        </p>
+    </div>
+    <div class="column">
+      <div class="result">
+        Query:
+        <p>
+          <textarea id='query' placeholder="SQL query ..."></textarea>
+        </p>
+      </div>
+      <div class="result"> 
+        Result: 
+        <p>
+          <textarea id="data" placeholder="Result ..."></textarea>
+        </p>
+      </div>
+    </div>
+   </div>
   </body>
 </html>
