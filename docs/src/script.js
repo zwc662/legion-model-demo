@@ -13,8 +13,9 @@ function request(){
 
     getResult(db_id, question, schema)
         .then(res => {
-            printResult(res);
+            return printResult(res);
         })
+        .then(res => console.log(res))
         .catch(error => {
             console.log(error);
         });
@@ -25,7 +26,7 @@ function request(){
     query.innerHTML=res['generated_text'];
     let data = document.getElementById("data");
     data.innerHTML=res['Result'];
-    
+    return res;
   }
   function printContent(id, content){
     let element = document.getElementById(id);
