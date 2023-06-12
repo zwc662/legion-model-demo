@@ -36,7 +36,7 @@ function request(){
 
   async function getResult(db_id, question, schema){
     const res= await fetch("https://test2sql-haqa5jgl5a-ue.a.run.app/", {
-        mode: 'no-cors',
+        /*mode: 'no-cors',*/
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -48,15 +48,16 @@ function request(){
             "create_table_sql": schema
         })
     });
+    
     const res_json = await res.json(); 
     return res_json;
 }
 
-let db_id="customer_complaints"
-let schema=""
-let question="Give the state that has the most customers."
+
+let db_id="customer_complaints";
+let schema="";
+let question="Give the state that has the most customers.";
  
 getResult(db_id, question, schema)
         .then((res)=>console.log(res));
  
-       

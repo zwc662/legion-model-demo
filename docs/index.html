@@ -3,7 +3,7 @@
   <head>
     <title>JavaScript Input</title>
     <link rel="stylesheet" type="text/css" href="src/style.css" />
-    <!---<script src="src/script.js"></script>-->
+    <script src="src/script.js"></script>
   </head>
   <body>
     <div class="row">
@@ -30,22 +30,25 @@
           <textarea id='query' placeholder="SQL query ..."></textarea>
           <script>
               fetch("https://test2sql-haqa5jgl5a-ue.a.run.app/", {
-                  mode: 'no-cors',
-                  method: 'POST',
-                  headers: {
-                      'Accept': 'application/json',
-                      'Content-Type': 'application/json'
-                  },
-                  body: JSON.stringify({
-                      "db_id": "customer_complaints",
-                      "question": "Give the state that has the most customers.",
-                      "create_table_sql": ""
-                  })
-              })
-              .then(res=> {
-                return res.json();
-              })
-              .catch(error => console.log(error));
+                mode: 'no-cors',
+                method: 'POST',
+                headers: {
+                    'Accept': 'text/html',
+                    'Content-Type': 'application/json' 
+                },
+                body: JSON.stringify({
+                    "db_id": "customer_complaints",
+                    "question": "Give the state that has the most customers.",
+                    "create_table_sql": ""
+                })
+            }).then(function (response) {
+              // The API call was successful!
+              console.log(response);
+              return response.json();
+            }).catch(function (err) {
+              // There was an error
+              console.log('Something went wrong.', err);
+            });
           </script>
         </p>
       </div>
