@@ -46,8 +46,8 @@ span {
 .column {
   float: left;
   width: 50px;
-  /*padding: 50px;
-  height: 300px; Should be removed. Only for demonstration */
+  padding: 0px 0px 0px 50px;
+  /*height: 300px; Should be removed. Only for demonstration */
 }
 
 /* Clear floats after the columns */
