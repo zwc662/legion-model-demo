@@ -35,12 +35,11 @@ function request(){
   }
 
   async function getResult(db_id, question, schema){
-    const res= await fetch("https://test2sql-haqa5jgl5a-ue.a.run.app/", {
-        /*mode: 'no-cors',*/
+    const res= await fetch("https://text2sql-s4vjhcroda-ue.a.run.app/", { 
         method: 'POST',
         headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json' 
+            /*'Accept': 'application/json',*/
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify({
             "db_id": db_id,
@@ -50,10 +49,11 @@ function request(){
     });
     
     const res_json = await res.json(); 
+     
     return res_json;
 }
 
-
+/*
 let db_id="customer_complaints";
 let schema="";
 let question="Give the state that has the most customers.";
@@ -61,3 +61,4 @@ let question="Give the state that has the most customers.";
 getResult(db_id, question, schema)
         .then((res)=>console.log(res));
  
+*/

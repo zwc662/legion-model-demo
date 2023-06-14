@@ -18,44 +18,23 @@
           <textarea id='db_id' placeholder="Enter your db_id ..."></textarea>
         </p>
         <p>
-        <button><!---</button> onclick="request();">-->
-          send 
+        <button onclick="request();">
+          translate
         </button>
         </p>
     </div>
     <div class="column">
       <div class="result">
         Query:
-        <p>
+        <div>
           <textarea id='query' placeholder="SQL query ..."></textarea>
-          <script>
-              fetch("https://test2sql-haqa5jgl5a-ue.a.run.app/", {
-                method: 'POST',
-                headers: {
-                    'Accept': 'text/html',
-                    'Content-Type': 'application/json' 
-                },
-                body: JSON.stringify({
-                    "db_id": "customer_complaints",
-                    "question": "Give the state that has the most customers.",
-                    "create_table_sql": ""
-                })
-            }).then(function (response) {
-              // The API call was successful!
-              console.log(response);
-              return response.json();
-            }).catch(function (err) {
-              // There was an error
-              console.log('Something went wrong.', err);
-            });
-          </script>
-        </p>
+        </div>
       </div>
       <div class="result"> 
         Result: 
-        <p>
+        <div>
           <textarea id="data" placeholder="Result ..."></textarea>
-        </p>
+        </div>
       </div>
     </div>
    </div>

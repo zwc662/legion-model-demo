@@ -1,18 +1,21 @@
+html * {
+  font: 20pt monospace;
+}
+
 p {
-    font-size: 16pt;
-    font-family: monospace;
     width: 500px;
   }
+
 
 textarea {
   outline: grey;
   border-radius: 8px;
-  font-size: 16pt;
   vertical-align: top;
   text-align: left;
   width: 500px;
 }
 
+ 
 #question {
   height: 60px;
 }
@@ -26,7 +29,6 @@ textarea {
 span {
   outline: grey;
   border-radius: 8px;
-  font-size: 16pt;
   vertical-align: top;
   text-align: left;
   width: 500px;
@@ -55,25 +57,24 @@ span {
   clear: both;
 }
 .result{
-  background-color:grey;
+  color: whitesmoke;
+  background-color: grey;
   border-radius: 8px;
-  font-size: 16pt;
-  font-family: monospace;
   vertical-align: top;
   text-align: left;
   width: 550px;
   margin-left:500px;
   margin-top:100px;
+  text-indent:10px;
 }
 
 button {
   width: 500px;
-  height: 36px;
+  height: 40px;
   text-align: center;
   vertical-align: top;
   padding: 0;
   border-radius: 8px;
-  font-size: 16pt;
 }
 
 #create_table_sql {
