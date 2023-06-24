@@ -1,0 +1,16 @@
+{
+    "repository": {
+        "repositoryArn": "arn:aws:ecr:us-east-2:479707389871:repository/text2sql",
+        "registryId": "479707389871",
+        "repositoryName": "text2sql",
+        "repositoryUri": "479707389871.dkr.ecr.us-east-2.amazonaws.com/text2sql",
+        "createdAt": "2023-06-17T14:36:38-04:00",
+        "imageTagMutability": "MUTABLE",
+        "imageScanningConfiguration": {
+            "scanOnPush": false
+        },
+        "encryptionConfiguration": {
+            "encryptionType": "AES256"
+        }
+    }
+}
