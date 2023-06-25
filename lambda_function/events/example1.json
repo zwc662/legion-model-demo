@@ -1,1 +1,0 @@
-{"data": {"db_id": "station_weather", "create_table_sql": "", "question": "show all train numbers and names ordered by their time from early to late.", "query": "SELECT train_number ,  name FROM train ORDER BY TIME"}}
