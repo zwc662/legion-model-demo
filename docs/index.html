@@ -9,13 +9,64 @@
     <div class="row">
       <div class="column">
         <p>
-        <textarea id='question' placeholder="Enter your question ..."></textarea>
+        <textarea id="question" placeholder="Enter your question. Example: &quot;list the local authorities and services provided by all stations&quot;"></textarea>
         </p>
         <p>
-          <textarea id='schema' placeholder="Enter your schema ..."></textarea>
+          <textarea id="schema" placeholder="Enter your table info. Example:  
+PRAGMA foreign_keys = ON;
+CREATE TABLE &quot;train&quot; (
+  &quot;id&quot; int,
+  &quot;train_number&quot; int,
+  &quot;name&quot; text,
+  &quot;origin&quot; text,
+  &quot;destination&quot; text,
+  &quot;time&quot; text,
+  &quot;interval&quot; text,
+  primary key (&quot;id&quot;)
+);
+CREATE TABLE &quot;station&quot; (
+  &quot;id&quot; int,
+  &quot;network_name&quot; text,
+  &quot;services&quot; text,
+  &quot;local_authority&quot; text,
+  primary key (&quot;id&quot;)
+);
+CREATE TABLE &quot;route&quot; (
+  &quot;train_id&quot; int,
+  &quot;station_id&quot; int,
+  primary key (&quot;train_id&quot;, &quot;station_id&quot;),
+  foreign key (&quot;train_id&quot;) references `train`(&quot;id&quot;),
+  foreign key (&quot;station_id&quot;) references `station`(&quot;id&quot;)
+);
+CREATE TABLE &quot;weekly_weather&quot; (
+  &quot;station_id&quot; int,
+  &quot;day_of_week&quot; text,
+  &quot;high_temperature&quot; int,
+  &quot;low_temperature&quot; int,
+  &quot;precipitation&quot; real,
+  &quot;wind_speed_mph&quot; int,
+  primary key (&quot;station_id&quot;, &quot;day_of_week&quot;),
+  foreign key (&quot;station_id&quot;) references &quot;station&quot;(&quot;id&quot;)
+);
+INSERT INTO  &quot;people&quot; VALUES (1,&quot;Francesco Postiglione&quot;,1.9,80,&quot;1972-04-29&quot;);
+INSERT INTO  &quot;people&quot; VALUES (2,&quot;Leonardo Binchi&quot;,1.86,57,&quot;1975-08-27&quot;);
+INSERT INTO  &quot;people&quot; VALUES (3,&quot;Fabrizio Buonocore&quot;,1.83, 45, &quot;1977-04-28&quot;);
+INSERT INTO  &quot;people&quot; VALUES (4,&quot;Marco Gerini&quot;,1.72, 75,&quot;1971-08-05&quot;);
+INSERT INTO  &quot;people&quot; VALUES (5,&quot;Roberto Calcaterra&quot;,1.75, 67, &quot;1972-02-06&quot;);
+INSERT INTO  &quot;people&quot; VALUES (6,&quot;Goran Fiorentini&quot;,1.78, 89, &quot;1981-11-21&quot;);
+INSERT INTO  &quot;people&quot; VALUES (7,&quot;Alberto Angelini&quot;,1.82,58, &quot;1974-09-28&quot;);
+INSERT INTO  &quot;people&quot; VALUES (8,&quot;Maurizio Felugo&quot;,1.95,76, &quot;1981-03-04&quot;);
+
+INSERT INTO  &quot;entrepreneur&quot; VALUES (1,1,&quot;Umbrolly&quot;,&quot;150000&quot;,&quot;Duncan Bannatyne&quot;);
+INSERT INTO  &quot;entrepreneur&quot; VALUES (2,2,&quot;Grails Ltd&quot;,&quot;120000&quot;,&quot;Doug Richard&quot;);
+INSERT INTO  &quot;entrepreneur&quot; VALUES (3,3,&quot;Le Beanock&quot;,&quot;54000&quot;,&quot;Rachel Elnaugh&quot;);
+INSERT INTO  &quot;entrepreneur&quot; VALUES (4,5,&quot;IV Cam&quot;,&quot;50000&quot;,&quot;Peter Jones&quot;);
+INSERT INTO  &quot;entrepreneur&quot; VALUES (5,6,&quot;Mycorrhizal Systems&quot;,&quot;75000&quot;,&quot;Simon Woodroffe&quot;);
+INSERT INTO  &quot;entrepreneur&quot; VALUES (6,8,&quot;Elizabeth Galton Ltd&quot;,&quot;110000&quot;,&quot;Duncan Bannatyne&quot;);
+          "></textarea>
         </p>
         <p>
-          <textarea id='db_id' placeholder="Enter your db_id ..."></textarea>
+          <textarea id="db_id" placeholder="Enter a db id. Example: station_weather"></textarea>
         </p>
         <p>
         <button onclick="request();">
@@ -27,7 +78,7 @@
       <div class="result">
         Query:
         <div>
-          <textarea id='query' placeholder="SQL query ..."></textarea>
+          <textarea id="query" placeholder="SQL query ..."></textarea>
         </div>
       </div>
       <div class="result"> 
